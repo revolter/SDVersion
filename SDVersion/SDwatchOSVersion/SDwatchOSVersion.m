@@ -26,6 +26,10 @@
                               @"Watch3,2" : @(AppleWatch42mmSeries3),
                               @"Watch3,3" : @(AppleWatch38mmSeries3),
                               @"Watch3,4" : @(AppleWatch42mmSeries3),
+                              @"Watch4,1" : @(AppleWatch40mmSeries4),
+                              @"Watch4,2" : @(AppleWatch44mmSeries4),
+                              @"Watch4,3" : @(AppleWatch40mmSeries4),
+                              @"Watch4,4" : @(AppleWatch44mmSeries4)
                               };
     });
     
@@ -63,6 +67,8 @@
              @(AppleWatch42mmSeries2) : @"Apple Watch Series 2 42mm",
              @(AppleWatch38mmSeries3) : @"Apple Watch Series 3 38mm",
              @(AppleWatch42mmSeries3) : @"Apple Watch Series 3 42mm",
+             @(AppleWatch40mmSeries4) : @"Apple Watch Series 4 40mm",
+             @(AppleWatch44mmSeries4) : @"Apple Watch Series 4 44mm",
              @(Simulator)             : @"Simulator"
              }[@(deviceVersion)];
 }
@@ -71,8 +77,12 @@
 {
     CGFloat screenHeight = CGRectGetHeight([WKInterfaceDevice currentDevice].screenBounds);
     
-    if (screenHeight == 195) {
+    if (screenHeight == 224) {
+        return Screen44mm;
+    } else if (screenHeight == 195) {
         return Screen42mm;
+    } else if(screenHeight == 197) {
+        return Screen40mm;
     } else if(screenHeight == 170) {
         return Screen38mm;
     } else {
@@ -85,7 +95,9 @@
     return @{
              @(UnknownSize) : @"Unknown Size",
              @(Screen38mm)  : @"38mm",
-             @(Screen42mm)  : @"42mm"
+             @(Screen40mm)  : @"40mm",
+             @(Screen42mm)  : @"42mm",
+             @(Screen44mm)  : @"44mm"
              }[@(deviceSize)];
 }
 
