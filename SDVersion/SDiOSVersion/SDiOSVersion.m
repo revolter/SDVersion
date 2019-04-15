@@ -169,6 +169,12 @@
         return Screen6Dot1inch;
     } else if (screenHeight == 896 && screenScale == 3) {
         return Screen6Dot5inch;
+    } else if (screenHeight == 1024) {
+        return Screen9Dot7inch;
+    } else if (screenHeight == 1112) {
+        return Screen10Dot5inch;
+    } else if (screenHeight == 1366) {
+        return Screen12Dot9inch;
     } else {
         return UnknownSize;
     }
@@ -196,6 +202,12 @@
         return Screen6Dot1inch;
     } else if (screenHeight == 2688) {
         return Screen6Dot5inch;
+    } else if (screenHeight == 2048) {
+        return Screen9Dot7inch;
+    } else if (screenHeight == 2224) {
+        return Screen10Dot5inch;
+    } else if (screenHeight == 2732) {
+        return Screen12Dot9inch;
     } else {
         return UnknownSize;
     }
@@ -251,8 +263,8 @@
              @(iPhone8Plus)          : @"iPhone 8 Plus",
              @(iPhoneX)              : @"iPhone X",
              @(iPhoneSE)             : @"iPhone SE",
-             @(iPhoneXS)             : @"iPhone XS",
              @(iPhoneXR)             : @"iPhone XR",
+             @(iPhoneXS)             : @"iPhone XS",
              @(iPhoneXSMax)          : @"iPhone XS Max",
              
              @(iPad1)                : @"iPad 1",
